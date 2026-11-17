@@ -1,6 +1,6 @@
-# Personal Website
+# memindanao (the portfolio, the website, the start)
 
-Evan Mindanao's personal portfolio website.
+My personal website, where I might upload stuff like projects or other stuff about me.
 
 ## Tech stack
 - React 19 + Vite 6

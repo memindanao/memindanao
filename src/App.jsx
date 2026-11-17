@@ -286,7 +286,7 @@ export default function App() {
             {projects.map((p) => (
               <article
                 key={p.title}
-                className="rounded-2xl border border-navy-700 bg-navy-800 p-6 transition duration-200 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-300/10"
+                className="rounded-2xl border border-navy-700 bg-navy-950 p-6 transition duration-200 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-300/10"
               >
                 {/* Titles render as written (no forced uppercase) so
                     "reCASHa" keeps its casing — changed 2026-11-15. */}
@@ -327,7 +327,7 @@ export default function App() {
           <SectionHeading>Experience</SectionHeading>
           <div className="mt-8 space-y-6">
             {experience.map((job) => (
-              <article key={job.role} className="rounded-2xl border border-navy-700 bg-navy-800 p-6">
+              <article key={job.role} className="rounded-2xl border border-navy-700 bg-navy-950 p-6">
                 <div className="flex flex-wrap justify-between gap-2">
                   <h3 className="font-heading text-2xl text-white">
                     {job.role}
@@ -346,7 +346,7 @@ export default function App() {
           <SectionHeading>School</SectionHeading>
           <div className="mt-8 space-y-6">
             {education.map((e) => (
-              <article key={e.school} className="rounded-2xl border border-navy-700 bg-navy-800 p-6">
+              <article key={e.school} className="rounded-2xl border border-navy-700 bg-navy-950 p-6">
                 <h3 className="font-heading text-2xl uppercase tracking-wide text-white">{e.school}</h3>
                 {e.degree ? <p className="mt-1">{e.degree}</p> : null}
                 {e.dates ? <p className="text-sm text-sky-300">{e.dates}</p> : null}
@@ -375,7 +375,7 @@ export default function App() {
           <SectionHeading>Skills</SectionHeading>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {skillGroups.map((g) => (
-              <div key={g.group} className="rounded-2xl border border-navy-700 bg-navy-800 p-6">
+              <div key={g.group} className="rounded-2xl border border-navy-700 bg-navy-950 p-6">
                 <h3 className="text-lg font-bold">{g.group}</h3>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {g.skills.map((s) => (
@@ -392,7 +392,7 @@ export default function App() {
         {/* --- 6. RESUME DOWNLOAD ---
             Boxed card (2026-11-17), matching the preview. */}
         <motion.section id="resume" {...fadeUp} className="py-12 text-center">
-          <div className="rounded-2xl border border-navy-700 bg-navy-800 px-6 py-12">
+          <div className="rounded-2xl border border-navy-700 bg-navy-950 px-6 py-12">
             <SectionHeading>Resume</SectionHeading>
             <p className="mx-auto mt-3 max-w-xl">
               Everything above, condensed into one PDF.
@@ -410,7 +410,7 @@ export default function App() {
             Boxed card with icon buttons (2026-11-17), matching the
             preview: heading "Contact", two rows of three buttons. */}
         <motion.section id="contact" {...fadeUp} className="py-12 text-center">
-          <div className="rounded-2xl border border-navy-700 bg-navy-800 px-6 py-12">
+          <div className="rounded-2xl border border-navy-700 bg-navy-950 px-6 py-12">
             <SectionHeading>Contact</SectionHeading>
             <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <a href={`mailto:${profile.email}`} className="flex items-center justify-center gap-2 rounded-xl border border-navy-700 bg-navy-900 px-4 py-3 transition hover:-translate-y-0.5 hover:border-sky-300">

@@ -86,7 +86,7 @@ export default function App() {
       </video>
       <div className="bg-overlay" aria-hidden="true" />
       {/* --- NAV (sticky, simple) --- */}
-      <header className="sticky top-0 z-10 border-b border-navy-700 bg-navy-900/90 backdrop-blur">
+      <header className="sticky top-0 z-20 border-b border-navy-700 bg-navy-900">
         <nav className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-3">
           <a href="#top" className="font-body text-xl lowercase tracking-wide text-white">
             memindanao

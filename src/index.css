@@ -31,6 +31,18 @@ body {
   color: var(--color-cream);
   font-family: var(--font-body);
 }
+/* Anchor offset for the sticky header: without this, clicking a nav
+   link scrolls the section's top underneath the header and hides the
+   top of its heading. Desktop header is ~53px tall; on phones the nav
+   wraps to ~3 rows, so the offset is larger there. */
+html {
+     scroll-padding-top: 72px;
+}
+@media (max-width: 640px) {
+     html {
+            scroll-padding-top: 160px;
+     }
+}
 
 /* Animated page background — dark low-poly video loop (Evan's pick,
    2026-11-16). Fixed behind the content, darkened by an overlay so

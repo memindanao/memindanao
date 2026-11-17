@@ -134,7 +134,7 @@ export default function App() {
           {/* About list box — same navy-800 card as the other sections
               (matches the preview's .about-list-wrap; Evan, 2026-11-17).
               The photo stays outside the box. */}
-          <div className="min-w-0 flex-1 rounded-2xl border border-navy-700 bg-navy-800 p-6">
+          <div className="min-w-0 flex-1 rounded-2xl border border-navy-700 bg-navy-950 p-6">
           <ul className="list-disc space-y-2 pl-6 text-left leading-relaxed">
             {profile.aboutBullets.slice(0, 3).map((b, i) => (
               <motion.li key={b.label} {...slideInLeft(i * 0.15)}>
@@ -198,7 +198,7 @@ export default function App() {
                 href={a.spotify}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-5 rounded-2xl border border-navy-700 bg-navy-800 p-5 transition duration-200 hover:-translate-y-1 hover:border-sky-300"
+                className="flex items-center gap-5 rounded-2xl border border-navy-700 bg-navy-950 p-5 transition duration-200 hover:-translate-y-1 hover:border-sky-300"
               >
                 <img
                   src={a.image}
@@ -246,7 +246,7 @@ export default function App() {
             {favouriteGames.map((g) => (
               <article
                 key={g.title}
-                className="flex items-center gap-5 rounded-2xl border border-navy-700 bg-navy-800 p-5 transition duration-200 hover:-translate-y-1 hover:border-sky-300"
+                className="flex items-center gap-5 rounded-2xl border border-navy-700 bg-navy-950 p-5 transition duration-200 hover:-translate-y-1 hover:border-sky-300"
               >
                 {/* Logos are transparent, so they blend with the card background — no white tile. */}
                 <div className="flex h-28 w-28 shrink-0 items-center justify-center">

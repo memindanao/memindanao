@@ -177,8 +177,12 @@ export default function App() {
         {/* --- 1b + 1c. FAVOURITES — albums left, games right ---
             Dual column on desktop (Evan's choice, 2026-11-11),
             stacked on phones. Cards go horizontal inside each
-            column so the stack doesn't get too tall. */}
-        <div className="grid gap-12 lg:grid-cols-2">
+            column so the stack doesn't get too tall.
+            The albums column is wider (1.3fr vs 1fr) so the longest
+            honourable-mention chip ("Three Cheers for Sweet Revenge
+            — My Chemical Romance") fits on one line instead of
+            wrapping — Evan flagged it 2026-11-17. */}
+        <div className="grid gap-y-12 gap-x-8 lg:grid-cols-[1.3fr_1fr]">
         <motion.section id="favourites" {...slideInLeftSection} className="py-12">
           <SectionHeading>My top 3 albums</SectionHeading>
           <p className="mt-3 max-w-2xl">The three albums I keep coming back to, and my favorite track from it:</p>

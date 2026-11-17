@@ -13,7 +13,6 @@ import { motion } from 'framer-motion'
 import { profile, projects, experience, education, skillGroups, favouriteAlbums, albumHonourableMentions, favouriteGames, gameHonourableMentions } from './data.js'
 
 // Subtle reveal: fade + rise 12px, once, when scrolled into view.
-// (Framer Motion — same animation library Soham's site uses.)
 // 1.2s, and it only starts once half the section is visible —
 // Evan's call (2026-11-12): it should kick in when the section is
 // about halfway through the page, not the moment it peeks in.

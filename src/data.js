@@ -35,11 +35,12 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/evan-m-056633369/',
   instagram: 'https://instagram.com/memindanao',
   steam: 'https://steamcommunity.com/id/memindanao/',
-  // Discord: handle from Evan's Discord profile screenshot (2026-11-11).
+  // Discord: username verified 2026-11-17 from Evan's Discord profile
+  // (User Settings > My Account): "shyylent". His display name is
+  // "shylent" (one y) — that is where the other spelling came from.
   // Discord has no public profile URL by username alone, so this is
-  // shown as text on the site, not a link — update the handle here
-  // if it's actually "shyylent" or something else.
-  discord: 'shylent',
+  // shown as text on the site, not a link.
+  discord: 'shyylent',
   resumeUrl: '/Evan_Mindanao_Resume.pdf',
 }
 

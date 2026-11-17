@@ -207,7 +207,7 @@ export default function App() {
                 />
                 <div className="min-w-0">
                   <p className="font-pixel text-xl text-sky-300">#{a.rank}</p>
-                  <h3 className="mt-1 font-heading text-2xl uppercase tracking-wide text-white">{a.title}</h3>
+                  <h3 className="mt-1 font-heading text-2xl text-white">{a.title}</h3>
                   <p className="mt-1 opacity-80">{a.artist}</p>
                   <p className="mt-2 text-sm text-sky-300">♪ Favourite song: {a.favouriteSong}</p>
                 </div>
@@ -254,7 +254,7 @@ export default function App() {
                 </div>
                 <div className="min-w-0">
                   <p className="font-pixel text-xl text-sky-300">#{g.rank}</p>
-                  <h3 className="mt-1 font-heading text-2xl uppercase tracking-wide text-white">{g.title}</h3>
+                  <h3 className="mt-1 font-heading text-2xl text-white">{g.title}</h3>
                 </div>
               </article>
             ))}

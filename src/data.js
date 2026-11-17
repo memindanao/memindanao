@@ -282,8 +282,10 @@ export const education = [
 
 // --- Skills ---------------------------------------------------
 // Note: spoken languages live in the About bullets now, not here.
+// Order and contents match the preview (2026-11-17): Python first
+// (Evan's main skill), FastAPI first, PostgreSQL in Tools.
 export const skillGroups = [
-  { group: 'Programming Languages', skills: ['Java', 'Python', 'C++', 'JavaScript', 'SQL'] },
-  { group: 'Libraries & Frameworks', skills: ['Pandas', 'Streamlit', 'LangChain', 'FastAPI', 'Tkinter'] },
-  { group: 'Tools & Other', skills: ['VS Code', 'Arduino', 'Git & GitHub'] },
+  { group: 'Languages', skills: ['Python', 'Java', 'C++', 'JavaScript', 'SQL'] },
+  { group: 'Libraries & frameworks', skills: ['FastAPI', 'Pandas', 'Streamlit', 'LangChain', 'Tkinter'] },
+  { group: 'Tools & other', skills: ['Git', 'VS Code', 'PostgreSQL', 'Arduino'] },
 ]

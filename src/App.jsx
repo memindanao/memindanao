@@ -68,9 +68,19 @@ const navLinks = [
 
 function SectionHeading({ children }) {
   return (
-    <h2 className="font-heading text-4xl md:text-5xl uppercase tracking-wide text-white">
+    <h2 className="font-heading text-4xl md:text-5xl text-white">
       {children}
     </h2>
+  )
+}
+
+// Small line icons for the contact buttons (Feather-style stroke icons,
+// plus simplified Steam and Discord marks).
+function ContactIcon({ children }) {
+  return (
+    <svg className="h-[18px] w-[18px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {children}
+    </svg>
   )
 }
 
@@ -346,16 +356,18 @@ export default function App() {
           </div>
         </motion.section>
 
-        {/* --- 5. SKILLS --- */}
+        {/* --- 5. SKILLS ---
+            Boxed cards (2026-11-17), matching the preview: three cards
+            side by side, each with its group title and skill chips. */}
         <motion.section id="skills" {...fadeUp} className="py-12">
-          <SectionHeading>What I use</SectionHeading>
-          <div className="mt-8 space-y-6">
+          <SectionHeading>Skills</SectionHeading>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             {skillGroups.map((g) => (
-              <div key={g.group}>
-                <h3 className="text-lg font-bold text-sky-300">{g.group}</h3>
-                <div className="mt-3 flex flex-wrap gap-2">
+              <div key={g.group} className="rounded-2xl border border-navy-700 bg-navy-800 p-6">
+                <h3 className="text-lg font-bold">{g.group}</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
                   {g.skills.map((s) => (
-                    <span key={s} className="rounded-full border border-navy-700 bg-navy-800 px-4 py-2">
+                    <span key={s} className="rounded-full border border-navy-700 bg-navy-900 px-4 py-2">
                       {s}
                     </span>
                   ))}
@@ -365,49 +377,58 @@ export default function App() {
           </div>
         </motion.section>
 
-        {/* --- 6. RESUME DOWNLOAD --- */}
+        {/* --- 6. RESUME DOWNLOAD ---
+            Boxed card (2026-11-17), matching the preview. */}
         <motion.section id="resume" {...fadeUp} className="py-12 text-center">
-          <SectionHeading>Want the short version?</SectionHeading>
-          <p className="mx-auto mt-3 max-w-xl">
-            My resume has the full list — experience, education, and projects, all on one page.
-          </p>
-          <a
-            href={profile.resumeUrl}
-            className="mt-6 inline-block rounded-full bg-sky-300 px-8 py-3 font-bold text-navy-900 transition hover:-translate-y-0.5 hover:bg-white"
-          >
-            Download my resume (PDF)
-          </a>
+          <div className="rounded-2xl border border-navy-700 bg-navy-800 px-6 py-12">
+            <SectionHeading>Resume</SectionHeading>
+            <p className="mx-auto mt-3 max-w-xl">
+              Everything above, condensed into one PDF.
+            </p>
+            <a
+              href={profile.resumeUrl}
+              className="mt-6 inline-block rounded-full bg-sky-300 px-8 py-3 font-bold text-navy-900 transition hover:-translate-y-0.5 hover:bg-white"
+            >
+              Download my resume (PDF)
+            </a>
+          </div>
         </motion.section>
 
         {/* --- 7. CONTACT ---
-            Text removed at Evan's request (2026-11-11): no label line,
-            no intro paragraph, no email line — just the heading and
-            the link buttons. */}
+            Boxed card with icon buttons (2026-11-17), matching the
+            preview: heading "Contact", two rows of three buttons. */}
         <motion.section id="contact" {...fadeUp} className="py-12 text-center">
-          <SectionHeading>Let&apos;s chat</SectionHeading>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <a href={`mailto:${profile.email}`} className="rounded-full border border-sky-300 px-6 py-3 font-bold text-sky-300 transition hover:-translate-y-0.5 hover:bg-navy-800">
-              Email me
-            </a>
-            <a href={profile.github} className="rounded-full border border-sky-300 px-6 py-3 font-bold text-sky-300 transition hover:-translate-y-0.5 hover:bg-navy-800">
-              GitHub
-            </a>
-            <a href={profile.linkedin} className="rounded-full border border-sky-300 px-6 py-3 font-bold text-sky-300 transition hover:-translate-y-0.5 hover:bg-navy-800">
-              LinkedIn
-            </a>
-            <a href={profile.instagram} className="rounded-full border border-sky-300 px-6 py-3 font-bold text-sky-300 transition hover:-translate-y-0.5 hover:bg-navy-800">
-              Instagram
-            </a>
-            <a href={profile.steam} className="rounded-full border border-sky-300 px-6 py-3 font-bold text-sky-300 transition hover:-translate-y-0.5 hover:bg-navy-800">
-              Steam
-            </a>
-            {/* Discord: no public profile URL by username alone, so this
-                is shown as text, not a link. */}
-            <span title="Discord" className="rounded-full border border-sky-300 px-6 py-3 font-bold text-sky-300">
-              Discord: {profile.discord}
-            </span>
+          <div className="rounded-2xl border border-navy-700 bg-navy-800 px-6 py-12">
+            <SectionHeading>Contact</SectionHeading>
+            <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <a href={`mailto:${profile.email}`} className="flex items-center justify-center gap-2 rounded-xl border border-navy-700 bg-navy-900 px-4 py-3 transition hover:-translate-y-0.5 hover:border-sky-300">
+                <ContactIcon><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></ContactIcon>
+                {profile.email}
+              </a>
+              <a href={profile.github} className="flex items-center justify-center gap-2 rounded-xl border border-navy-700 bg-navy-900 px-4 py-3 transition hover:-translate-y-0.5 hover:border-sky-300">
+                <ContactIcon><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></ContactIcon>
+                github.com/memindanao
+              </a>
+              <a href={profile.linkedin} className="flex items-center justify-center gap-2 rounded-xl border border-navy-700 bg-navy-900 px-4 py-3 transition hover:-translate-y-0.5 hover:border-sky-300">
+                <ContactIcon><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></ContactIcon>
+                LinkedIn
+              </a>
+              <a href={profile.instagram} className="flex items-center justify-center gap-2 rounded-xl border border-navy-700 bg-navy-900 px-4 py-3 transition hover:-translate-y-0.5 hover:border-sky-300">
+                <ContactIcon><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></ContactIcon>
+                Instagram · @memindanao
+              </a>
+              <a href={profile.steam} className="flex items-center justify-center gap-2 rounded-xl border border-navy-700 bg-navy-900 px-4 py-3 transition hover:-translate-y-0.5 hover:border-sky-300">
+                <ContactIcon><circle cx="9" cy="15" r="5.5" /><path d="M13 11.5 18.5 6" /><circle cx="19.5" cy="5" r="1.8" /></ContactIcon>
+                Steam · memindanao
+              </a>
+              {/* Discord: no public profile URL by username alone, so this
+                  is shown as text, not a link. */}
+              <span title="Discord" className="flex items-center justify-center gap-2 rounded-xl border border-navy-700 bg-navy-900 px-4 py-3">
+                <ContactIcon><path d="M7 5h10a5 5 0 0 1 5 5v3a5 5 0 0 1-5 5h-2l-1.2-1.5H10.2L9 18H7a5 5 0 0 1-5-5v-3a5 5 0 0 1-5-5z" /><circle cx="9.5" cy="11.5" r="0.6" fill="currentColor" /><circle cx="14.5" cy="11.5" r="0.6" fill="currentColor" /></ContactIcon>
+                Discord: {profile.discord}
+              </span>
+            </div>
           </div>
-          <p className="mt-4 text-sm opacity-70">{profile.email}</p>
         </motion.section>
       </main>
 

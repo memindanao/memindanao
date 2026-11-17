@@ -229,31 +229,24 @@ export const projects = [
 // --- Experience ----------------------------------------------
 export const experience = [
   {
+    role: 'Community Spaces Crew',
+    org: 'Carleton University',
+    location: 'Ottawa',
+    dates: 'Sep 2026 — present',
+    description: '',
+  },
+  {
     role: 'BMS Intern',
     org: 'B Tech Switchgear',
     location: 'Dubai, UAE',
-    dates: 'Jun – Aug 2025',
+    dates: 'Jun — Aug 2025',
     description: '',
   },
   {
-    role: 'Community Spaces Crew Team Member',
-    org: 'Carleton University',
-    location: 'Ottawa, ON',
-    dates: 'Sep 2026 – Present',
-    description: '',
-  },
-  {
-    role: 'IT Support',
+    role: 'Information Technology Specialist',
     org: 'Binghalib Technology',
-    location: '',
-    dates: 'Jun – Jul 2022',
-    description: '',
-  },
-  {
-    role: 'Camp Counsellor',
-    org: "St. Mary's",
-    location: '',
-    dates: '',
+    location: 'Dubai, UAE',
+    dates: 'Jun — Jul 2022',
     description: '',
   },
 ]

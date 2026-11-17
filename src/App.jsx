@@ -310,19 +310,22 @@ export default function App() {
           </div>
         </motion.section>
 
-        {/* --- 3. EXPERIENCE --- */}
+        {/* --- 3. EXPERIENCE ---
+            Matches the preview (2026-11-17): heading "Experience",
+            role title on its own line in title case, org + location
+            below it, dates on the right. */}
         <motion.section id="experience" {...fadeUp} className="py-12">
-          <SectionHeading>Where I&apos;ve worked</SectionHeading>
+          <SectionHeading>Experience</SectionHeading>
           <div className="mt-8 space-y-6">
             {experience.map((job) => (
               <article key={job.role} className="rounded-2xl border border-navy-700 bg-navy-800 p-6">
                 <div className="flex flex-wrap justify-between gap-2">
-                  <h3 className="font-heading text-2xl uppercase tracking-wide text-white">
-                    {job.role} · {job.org}
+                  <h3 className="font-heading text-2xl text-white">
+                    {job.role}
                   </h3>
                   <span className="text-sm text-sky-300">{job.dates}</span>
                 </div>
-                {job.location ? <p className="text-sm opacity-70">{job.location}</p> : null}
+                {job.org ? <p className="text-sm opacity-70">{job.org}{job.location ? ` · ${job.location}` : ''}</p> : null}
                 {job.description ? <p className="mt-3 leading-relaxed">{job.description}</p> : null}
               </article>
             ))}

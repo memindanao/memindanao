@@ -131,7 +131,11 @@ export default function App() {
               (Evan's choice, 2026-11-11). Photo sits below the bullets
               on phones. */}
           <div className="mx-auto mt-10 flex max-w-4xl flex-col-reverse items-center gap-8 md:flex-row md:items-center md:text-left">
-          <ul className="min-w-0 flex-1 list-disc space-y-2 pl-6 text-left leading-relaxed">
+          {/* About list box — same navy-800 card as the other sections
+              (matches the preview's .about-list-wrap; Evan, 2026-11-17).
+              The photo stays outside the box. */}
+          <div className="min-w-0 flex-1 rounded-2xl border border-navy-700 bg-navy-800 p-6">
+          <ul className="list-disc space-y-2 pl-6 text-left leading-relaxed">
             {profile.aboutBullets.slice(0, 3).map((b, i) => (
               <motion.li key={b.label} {...slideInLeft(i * 0.15)}>
                 <span className="font-bold text-sky-300">{b.label}:</span> {b.value}
@@ -160,6 +164,7 @@ export default function App() {
               </motion.li>
             ))}
           </ul>
+          </div>
           {/* Photo: Evan's waterfront photo, fixed up 2026-11-11 —
               cropped square, lightly enhanced. File is public/photo.jpg. */}
           <img

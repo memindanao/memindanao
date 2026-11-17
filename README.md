@@ -20,7 +20,7 @@ npm run dev
 Then open the localhost link it prints.
 
 ## Deploy to Vercel (free)
-1. Push this folder to GitHub (e.g. `github.com/memindanao/personal-website`).
+1. Push this folder to GitHub (e.g. `github.com/memindanao/memindanao`).
 2. Go to vercel.com → Add New → Project → import that repo.
 3. Vercel auto-detects Vite — leave Build Command `npm run build` and Output Directory `dist` as-is (also set in `vercel.json`).
 4. Deploy. Every `git push` after that redeploys automatically.

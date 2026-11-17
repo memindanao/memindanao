@@ -1,0 +1,68 @@
+/* ============================================================
+   FONTS — change them all in this one block.
+   All Courier New (Evan's favourite). Press Start 2P and BM
+   Space (the Persona 3 logo font) were trialled on 2026-11-16
+   and reverted the same night — even at Courier-matched sizes
+   BM Space still looked too big. BM Space is freeware for
+   personal use (BitmapMania, copyright retained), so it could
+   be tried again later; its woff was removed with the revert.
+   To swap a font: change the name here + the Google Fonts link
+   in index.html, nothing else.
+   ============================================================ */
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Courier New", Courier, monospace;
+  --font-pixel: "Courier New", Courier, monospace;
+  --font-body: "Courier New", Courier, monospace;
+
+  /* Navy theme — tweak these three and the whole site follows. */
+  --color-navy-950: #060f1f;
+  --color-navy-900: #0a1931;
+  --color-navy-800: #13294b;
+  --color-navy-700: #1d3a5f;
+  --color-accent: #7dd3fc;
+  --color-cream: #e6edf7;
+}
+
+/* Base page: navy background, light monospace text. */
+body {
+  background-color: var(--color-navy-900);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+}
+
+/* Animated page background — dark low-poly video loop (Evan's pick,
+   2026-11-16). Fixed behind the content, darkened by an overlay so
+   text stays readable. Phones and reduced-motion get the still
+   poster instead of the video. */
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 22, 0.45);
+  z-index: 0;
+}
+@media (max-width: 640px), (prefers-reduced-motion: reduce) {
+  .bg-video { display: none; }
+  .bg-overlay {
+    background:
+      linear-gradient(rgba(4, 8, 22, 0.5), rgba(4, 8, 22, 0.6)),
+      url('/bg-poly-poster.jpg') center / cover no-repeat;
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.6s ease-out both;
+}

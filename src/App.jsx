@@ -280,7 +280,7 @@ export default function App() {
 
         {/* --- 2. PROJECTS (Cards 2: navy cards, hover lift + glow) --- */}
         <motion.section id="projects" {...fadeUp} className="py-12">
-          <SectionHeading>Things I&apos;ve built</SectionHeading>
+          <SectionHeading>Projects</SectionHeading>
           <p className="mt-3 max-w-2xl">A few course projects and side builds.</p>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {projects.map((p) => (
@@ -343,7 +343,7 @@ export default function App() {
 
         {/* --- 4. EDUCATION --- */}
         <motion.section id="education" {...fadeUp} className="py-12">
-          <SectionHeading>School</SectionHeading>
+          <SectionHeading>Education</SectionHeading>
           <div className="mt-8 space-y-6">
             {education.map((e) => (
               <article key={e.school} className="rounded-2xl border border-navy-700 bg-navy-950 p-6">

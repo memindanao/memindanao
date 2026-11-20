@@ -25,7 +25,6 @@ export const profile = {
     { label: 'Goal', value: 'Finding a Summer 2027 software engineering internship' },
     { label: 'Hobbies', value: 'Weightlifting, cycling (fixed gear)' },
   ],
-  seeking: 'Seeking Summer 2027 Software Engineering Internships',
   // Photo: Evan's waterfront photo, cropped with him on the right,
   // like his Instagram profile pic. File: public/photo.jpg
   photo: '/photo.jpg',
